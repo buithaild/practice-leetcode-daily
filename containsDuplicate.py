@@ -1,14 +1,13 @@
 from typing import List
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
-        ## C1
-        # nums.sort()
-        #
-        # for i in range(1, len(nums)):
-        #     if nums[i] == nums[i-1]:
-        #         return True
-        # return False
+        # C1
+        nums.sort()
 
+        for i in range(1, len(nums)):
+            if nums[i] == nums[i-1]:
+                return True
+        return False
 
         ## Cach 2
         # mySet = set()
@@ -17,8 +16,6 @@ class Solution:
         #         return True
         #     mySet.add(n)
         # return  False
-
-
 
 if __name__ == "__main__":
     solution = Solution()
