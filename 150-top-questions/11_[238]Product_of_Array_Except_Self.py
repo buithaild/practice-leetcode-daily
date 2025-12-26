@@ -20,6 +20,7 @@ from typing import List
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
 
+        # ####CACH 1
         n = len(nums)
         answer = [1]*n
 
@@ -32,6 +33,19 @@ class Solution:
            answer[i] *= postfix
            postfix *= nums[i]
         return answer
+
+        # ####CÁCH 2: O(n^2)
+        # n = len(nums)
+        # answer = [1]*n
+        #
+        # for i in range(0, n):
+        #     pro = 1
+        #     for j in range(0, n):
+        #         if i==j:
+        #             continue
+        #         pro *= nums[j]
+        #     answer[i] = pro
+        # return answer
 
 if __name__ == "__main__":
     s = Solution()
